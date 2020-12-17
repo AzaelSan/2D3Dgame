@@ -9,9 +9,11 @@ public class LevelLoader : MonoBehaviour
     private GameManager gm;
 
     public float transitionTime = 1.0f;
+    public static bool loadingTransition = false;
 
     private void Start()
     {
+        StartCoroutine(FinishLoad());
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
     }
 
@@ -58,10 +60,18 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int levelIndex)
     {
+        loadingTransition = true;
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
+        
+        SceneManager.LoadScene(levelIndex); 
+    }
 
-        SceneManager.LoadScene(levelIndex);
+    IEnumerator FinishLoad()
+    {
+        loadingTransition = true;
+        yield return new WaitForSeconds(transitionTime - 0.8f);
+        loadingTransition = false;
     }
 }

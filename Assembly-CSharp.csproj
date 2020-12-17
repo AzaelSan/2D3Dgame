@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{54F79ED7-3BDE-A9AC-61B9-183E5F7DDDCD}</ProjectGuid>
+    <ProjectGuid>{A2990FE8-8890-327E-43AE-89600EBBF885}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,6 +62,7 @@
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\FaceToCamera.cs" />
     <Compile Include="Assets\Azael\Scripts\Camera_Translucid.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\Spider.cs" />
+    <Compile Include="Assets\RemoveOn2D.cs" />
     <Compile Include="Assets\EnemyBase.cs" />
     <Compile Include="Assets\Azael\Scripts\Camera_Movement.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\DemoMenuButton.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\DestroyAfterXTime.cs" />
     <Compile Include="Assets\SettingsMenu.cs" />
     <Compile Include="Assets\PauseGame.cs" />
+    <Compile Include="Assets\Coliseo.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\GoblinArcher.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\GoblinGuard.cs" />
     <Compile Include="Assets\Azael\Data.cs" />
@@ -92,6 +94,7 @@
     <Compile Include="Assets\Brick.cs" />
     <Compile Include="Assets\Nato\ObjectManager.cs" />
     <Compile Include="Assets\Checkpoint.cs" />
+    <Compile Include="Assets\GrabPlayer.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\Ninja.cs" />
     <Compile Include="Assets\Nato\Enemy1Controller.cs" />
     <Compile Include="Assets\PauseMenu.cs" />
@@ -106,6 +109,7 @@
     <Compile Include="Assets\Azael\MenuUI.cs" />
     <Compile Include="Assets\Azael\Scripts\GroundColliders.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\LavaBall.cs" />
+    <Compile Include="Assets\TriggerWall.cs" />
     <Compile Include="Assets\PlayerCombat.cs" />
     <Compile Include="Assets\Azael\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Azael\LeanTween\LTDescrOptional.cs" />
@@ -116,10 +120,6 @@
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\VenusFlytrap.cs" />
     <Compile Include="Assets\Azael\LeanTween\LTDescr.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\Spearman.cs" />
-    <Compile Include="Assets\RemoveOn2D.cs" />
-    <Compile Include="Assets\Coliseo.cs" />
-    <Compile Include="Assets\GrabPlayer.cs" />
-    <Compile Include="Assets\TriggerWall.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

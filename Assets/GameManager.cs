@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,17 +31,21 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start Button"))
+        if((SceneManager.GetActiveScene().name != "MainMenu" || SceneManager.GetActiveScene().name != "Options") && !LevelLoader.loadingTransition) //No poder pausar en los menus
         {
-            if (isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start Button"))
             {
-                Resume();
-            }
-            else
-            {
-                Pause();
+                if (isPaused)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
         }
+        
     }
 
     public static void Resume()
@@ -57,14 +62,17 @@ public class GameManager : MonoBehaviour
 
     public void Continue()
     {
-        Data data = SaveSystem.LoadData();
+        if (SaveSystem.CheckFileExist())
+        {
+            Data data = SaveSystem.LoadData();
 
-        currentLevel = data.level;
-        health = data.health;
-        Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-        lastCheckpointPos = position;
+            currentLevel = data.level;
+            health = data.health;
+            Vector3 position;
+            position.x = data.position[0];
+            position.y = data.position[1];
+            position.z = data.position[2];
+            lastCheckpointPos = position;
+        }
     }
 }

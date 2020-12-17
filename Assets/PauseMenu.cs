@@ -7,9 +7,12 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject PauseMenuUI;
     public GameObject options;
+    public GameObject checkpoint;
+    public LevelLoader loader;
 
     private void Start()
     {
+        loader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
         PauseMenuUI.SetActive(false);
     }
 
@@ -31,5 +34,16 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuUI.SetActive(false);
         options.SetActive(true);
+    }
+
+    public void loadCheckpoint()
+    {
+        GameManager.Resume();
+        loader.Continue();
+    }
+
+    public void menu()
+    {
+        loader.LoadMainMenu();
     }
 }
