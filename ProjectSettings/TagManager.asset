@@ -11,6 +11,9 @@ TagManager:
   - GM
   - 3DInverseCamPosition
   - LevelLoader
+  - MovingPlat
+  - Checkpoint
+  - UI_gameplay
   layers:
   - Default
   - TransparentFX

@@ -20,12 +20,15 @@ public class PlayerCombat : MonoBehaviour
 
     bool canAttack = true;//Para esperar entre cada ataque
     bool invulnerable = false;//Para hacer inmune al jugador por unos segundos despues de ser golpeado
+    public static bool gameover = false;
 
+    private UI_gameplay ui;
     private AudioManager audioManager;
 
     private void Start()
     {
         SettingsMenu.mainMenu = false;
+        ui = GameObject.FindGameObjectWithTag("UI_gameplay").GetComponent<UI_gameplay>();
         //audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         rigi = GetComponent<Rigidbody>();
     }
@@ -77,6 +80,11 @@ public class PlayerCombat : MonoBehaviour
     public void takeDamage(Vector3 _direction)
     {
         Health -= 1;
+        ui.SetHearths();
+        if(Health <= 0)
+        {
+            gameover = true;
+        }
         rigi.AddForce(_direction * 10.0f, ForceMode.Impulse); //Impulsar al jugador hacia atras cuando recibe daño
         rigi.AddRelativeForce(Vector3.up * 10.0f, ForceMode.Impulse);
         StartCoroutine(waitToTakeDamage());

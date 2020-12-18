@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         SettingsMenu.mainMenu = true;
+        PlayerCombat.gameover = false;
         continue_Btn.SetActive(SaveSystem.CheckFileExist());
     }
 }
