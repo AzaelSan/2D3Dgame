@@ -73,6 +73,7 @@
     <Compile Include="Assets\Nato\Enemy3Controller.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\WaterfallSplash.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\Explosion.cs" />
+    <Compile Include="Assets\Sprites\UI\UI_gameplay.cs" />
     <Compile Include="Assets\Azael\MainMenu.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\WonderlandDemo.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\Arrow.cs" />
@@ -120,7 +121,6 @@
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\VenusFlytrap.cs" />
     <Compile Include="Assets\Azael\LeanTween\LTDescr.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\Spearman.cs" />
-    <Compile Include="Assets\Sprites\UI\UI_gameplay.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

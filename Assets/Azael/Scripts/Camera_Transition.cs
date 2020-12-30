@@ -1,10 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Camera_Transition : MonoBehaviour
 {
     //Mecánica de girar la camara para cambiar de perspectiva, con un contador que cuando termina regresa automaticamente de 2D a 3D y pausa el tiempo mientras se ejecuta la transicion
+
+    //Sprites de posicion de camara
+    public Image cam_img;
+    public Sprite izq, der, frente, atras;
+
 
     public static bool ortho = false; //Booleano para saber si la camara esta en modo ortografico
     public bool perspective = true; //Booleano para saber si la cámara esta en 3D o 2D
@@ -30,6 +36,7 @@ public class Camera_Transition : MonoBehaviour
         pos3DInverseCamera = GameObject.FindGameObjectWithTag("3DInverseCamPosition"); //EmptyObject para la posicion de la camara en 2D
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>(); //Rigibody del jugador
         actualVel = player.gameObject.GetComponent<Movement>().movementSpeed;
+        cam_img.sprite = frente;
     }
 
     void LateUpdate()
@@ -54,6 +61,8 @@ public class Camera_Transition : MonoBehaviour
 
         if (perspective && !inverse) //Cambiar a "2D"
         {
+            cam_img.sprite = der;
+
             InTransition = true;
             perspective = false;
             LeanTween.rotate(gameObject, new Vector3(0.0f, -90.0f, 0.0f), transitionTime).setOnComplete(ChangeBool);
@@ -61,6 +70,8 @@ public class Camera_Transition : MonoBehaviour
         }
         else if (perspective && inverse)
         {
+            cam_img.sprite = der;
+
             InTransition = true;
             perspective = false;
             LeanTween.rotate(gameObject, new Vector3(0.0f, -90.0f, 0.0f), transitionTime).setOnComplete(ChangeBool);
@@ -68,6 +79,8 @@ public class Camera_Transition : MonoBehaviour
         }
         else if (!perspective && inverse)
         {
+            cam_img.sprite = atras;
+
             ortho = false;
             InTransition = true;
             perspective = true;
@@ -78,6 +91,8 @@ public class Camera_Transition : MonoBehaviour
         }
         else //Cambiar a "3D"
         {
+            cam_img.sprite = frente;
+
             ortho = false;
             InTransition = true;
             perspective = true;
@@ -95,6 +110,8 @@ public class Camera_Transition : MonoBehaviour
 
         if (!inverse) //Cambiar a "2D"
         {
+            cam_img.sprite = atras;
+
             InTransition = true;
             LeanTween.rotate(gameObject, new Vector3(0.0f, -90.0f, 0.0f), 0.25f).setOnComplete(aTransition180);
             LeanTween.move(cam.gameObject, pos2DCamera.transform.position, 0.25f);
@@ -102,6 +119,8 @@ public class Camera_Transition : MonoBehaviour
         }
         else
         {
+            cam_img.sprite = frente;
+
             InTransition = true;
             LeanTween.rotate(gameObject, new Vector3(0.0f, -90.0f, 0.0f), 0.25f).setOnComplete(aTransition180);
             LeanTween.move(cam.gameObject, pos2DCamera.transform.position, 0.25f);

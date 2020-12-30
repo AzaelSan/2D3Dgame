@@ -2287,6 +2287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9298799c672abf4c8f73a589a558151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam_img: {fileID: 8000276313055677690}
+  izq: {fileID: 21300000, guid: bc701bbc60f6b474da76bb6a90b197b9, type: 3}
+  der: {fileID: 21300000, guid: 8537a4beab4002149b0e4e1a2c857425, type: 3}
+  frente: {fileID: 21300000, guid: b5e7dfb107b3aa44b960bb74589edbe0, type: 3}
+  atras: {fileID: 21300000, guid: 155452b17a349cd45bae20bfb3123014, type: 3}
   perspective: 1
   InTransition: 0
   canRotate: 1
@@ -4580,3 +4585,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3070664ea78193142ad3044dab6f2ec9, type: 3}
+--- !u!114 &8000276313055677690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8000276311592568628, guid: 3070664ea78193142ad3044dab6f2ec9, type: 3}
+  m_PrefabInstance: {fileID: 8000276313055677689}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
