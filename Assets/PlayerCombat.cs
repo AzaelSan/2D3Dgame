@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    Vector3 aplastar = new Vector3(0,-1,0);
+    Vector3 aplastar = new Vector3(0, -1, 0);
     private Rigidbody rigi;
     public Animator animator;
     public Transform attackPoint;
@@ -66,9 +66,9 @@ public class PlayerCombat : MonoBehaviour
         ///Play animation
         //animator.SetTrigger("Attack");
         ///Detect enemies in range of attack
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position,attackRange,enemyLayers);
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
         ///Deal damage
-        foreach(Collider enemy in hitEnemies)
+        foreach (Collider enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyBase>().TakeDamage(attackDamage); //Hacer daño al enemigo
             enemy.GetComponent<EnemyBase>().Empujar(transform.position); //Empujar al enemigo hacia atras
@@ -81,7 +81,7 @@ public class PlayerCombat : MonoBehaviour
     {
         Health -= 1;
         ui.SetHearths();
-        if(Health <= 0)
+        if (Health <= 0)
         {
             gameover = true;
         }
@@ -108,7 +108,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if(attackPoint == null)
+        if (attackPoint == null)
         {
             return;
         }

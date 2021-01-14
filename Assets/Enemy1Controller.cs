@@ -13,7 +13,7 @@ public class Enemy1Controller : MonoBehaviour
     public GameObject[] drops;
     public float stun;
 
-    float targetRange = 5f;
+    public float targetRange = 15f;
     float recurrentSpeed;
 
     private EnemyBase enemyBase;
@@ -38,7 +38,7 @@ public class Enemy1Controller : MonoBehaviour
         Controller();
     }
 
-    
+
 
     void Findtarget()
     {
@@ -67,18 +67,20 @@ public class Enemy1Controller : MonoBehaviour
     void Die()
     {
         int probDrop = Random.Range(1, 100);
-        if(probDrop >= 50)
+        if (probDrop >= 50)
         {
             Debug.Log("Instancia un drop");
-            probDrop = Random.Range(0, drops.Length);
-            Debug.Log(probDrop);
-            Instantiate(drops[probDrop], this.gameObject.transform.position, Quaternion.identity);
-        } else
+            if (drops != null)
+            {
+                probDrop = Random.Range(0, drops.Length);
+                Debug.Log(probDrop);
+                Instantiate(drops[probDrop], this.gameObject.transform.position, Quaternion.identity);
+            }
+        }
+        else
         {
             Debug.Log("No instancia un drop");
         }
-
-
         //Se necesita pulir codigo para animacion antes de morir
         Destroy(this.gameObject);
     }
