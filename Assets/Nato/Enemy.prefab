@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 8979421300301159386}
   - component: {fileID: 8979421300301159389}
   - component: {fileID: 8979421300301159388}
-  - component: {fileID: 8979421300301159390}
   - component: {fileID: 8979421300301159391}
+  - component: {fileID: 6128729268161571983}
   - component: {fileID: 8979421300301159387}
   - component: {fileID: 8979421300301159384}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -85,26 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8979421300301159390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8979421300301159377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5573b5ca6089c1844a8de2a478c0ebe3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  locations:
-  - {x: -7.75, y: -1.802895, z: 8.85}
-  - {x: 4.53, y: -1.802895, z: 4.5}
-  - {x: -6.02, y: -1.802895, z: 0.05}
-  speed: 2
-  chosen: 0
-  plusminus: 0
-  playerDetected: 0
 --- !u!65 &8979421300301159391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -118,6 +98,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6128729268161571983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8979421300301159377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945ea2c5d59031e4aa0604e020c332c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locations:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  speed: 0
+  chosen: 0
+  plusminus: 0
+  playerDetected: 0
+  drops: []
+  stun: 0
+  targetRange: 15
 --- !u!114 &8979421300301159387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,10 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  vulnerable: 1
   maxHealth: 0
   currentHealth: 0
   damageOfEnemy: 0
+  rigi: {fileID: 0}
   enemyType: 0
 --- !u!54 &8979421300301159384
 Rigidbody:
