@@ -5,16 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    static GameManager instance;
+    public static GameManager instance;
     public static bool isPaused = false;
+    public GameObject gameOverPanel;
+
 
     public Vector3 lastCheckpointPos;
+    public Vector3 FirstCheckpointPos;
     public int health;
     public int currentLevel;
 
     private void Awake()
     {
-        lastCheckpointPos = new Vector3(0.0f, 2.2f, -15.0f);
+        FirstCheckpointPos = new Vector3(0.0f, 2.2f, -15.0f);
+        lastCheckpointPos = FirstCheckpointPos;
         health = 3;
         currentLevel = 1;
 
@@ -74,5 +78,10 @@ public class GameManager : MonoBehaviour
             position.z = data.position[2];
             lastCheckpointPos = position;
         }
+    }
+    public void GameOver()
+    {
+        Debug.Log("Mamaste");
+        gameOverPanel.SetActive(true);
     }
 }

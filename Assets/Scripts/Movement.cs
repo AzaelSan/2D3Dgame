@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
+        if(!PlayerCombat.gameover)
         //Checks if the character is grounded.
         isGrounded = Physics.CheckSphere(groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
         movementInput = Vector3.zero;

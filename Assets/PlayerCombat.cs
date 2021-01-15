@@ -35,10 +35,17 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.L)) && canAttack)
+        if (!gameover)
         {
-            Attack();
-            //audioManager.playSound(Sounds.attack);
+            if ((Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.L)) && canAttack)
+            {
+                Attack();
+                //audioManager.playSound(Sounds.attack);
+            }
+            if(rigi.position.y < -40)
+            {
+                GameManager.instance.GameOver();
+            }
         }
     }
 
@@ -84,6 +91,7 @@ public class PlayerCombat : MonoBehaviour
         if (Health <= 0)
         {
             gameover = true;
+            GameManager.instance.GameOver();
         }
         rigi.AddForce(_direction * 10.0f, ForceMode.Impulse); //Impulsar al jugador hacia atras cuando recibe daño
         rigi.AddRelativeForce(Vector3.up * 10.0f, ForceMode.Impulse);
