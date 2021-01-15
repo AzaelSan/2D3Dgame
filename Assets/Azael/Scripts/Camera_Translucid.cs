@@ -9,7 +9,7 @@ public class Camera_Translucid : MonoBehaviour
     GameObject player; //Jugador, para saber su posicion y emitir un rayo
     public LayerMask objects; //La capa de los objetos que pueden hacerse transparentes
     Color opacity; //Material con transparencia
-    Color originalColor; //Guardar su color original
+    Material originalColor; //Guardar su color original
     MeshRenderer translucidObject; //Guardar objeto que golpea el rayo
     bool saved = false; //Bool para saber si el color original ya fue guardado
 
@@ -30,10 +30,10 @@ public class Camera_Translucid : MonoBehaviour
             translucidObject = hit.collider.gameObject.GetComponent<MeshRenderer>();
             if(!saved)
             {
-                originalColor = translucidObject.material.color;
+                originalColor = translucidObject.material;
                 saved = true;
             }
-            opacity = new Color(originalColor.r, originalColor.g, originalColor.b, 0.3f);
+            opacity = new Color(originalColor.color.r, originalColor.color.g, originalColor.color.b, 0.3f);
             translucidObject.material.color = opacity;
         }
         else
@@ -41,7 +41,7 @@ public class Camera_Translucid : MonoBehaviour
             
             if(translucidObject != null)
             {
-                translucidObject.material.color = originalColor;
+                translucidObject.material = originalColor;
                 saved = false;
             }
         }
