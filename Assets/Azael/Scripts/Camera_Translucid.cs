@@ -38,7 +38,6 @@ public class Camera_Translucid : MonoBehaviour
         }
         else
         {
-            
             if(translucidObject != null)
             {
                 translucidObject.material.color = originalColor;
