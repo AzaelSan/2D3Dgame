@@ -2468,6 +2468,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8000276312038249371, guid: 3070664ea78193142ad3044dab6f2ec9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -38.56494
+      objectReference: {fileID: 0}
     - target: {fileID: 8000276313211574747, guid: 3070664ea78193142ad3044dab6f2ec9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17592,6 +17596,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5252936862529465326, guid: d257fac2f8992a341849252eb7c98df6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7e316d9de30d75041a19a263e487ecbd, type: 2}
     - target: {fileID: 5252936862529465328, guid: d257fac2f8992a341849252eb7c98df6, type: 3}
       propertyPath: m_Name
       value: Ground
