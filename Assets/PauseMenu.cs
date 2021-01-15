@@ -21,6 +21,10 @@ public class PauseMenu : MonoBehaviour
         if(Input.GetButtonDown("Start Button") || Input.GetKeyDown(KeyCode.Escape))
         {
             PauseMenuUI.SetActive(GameManager.isPaused);
+            if(options.active == true)
+            {
+                options.SetActive(false);
+            }
         }
     }
 
