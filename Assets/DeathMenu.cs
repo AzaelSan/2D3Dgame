@@ -11,7 +11,6 @@ public class DeathMenu : MonoBehaviour
 
     private void Awake()
     {
-        print("queanos?");
         //loader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
         deathUI.SetActive(false);
     }
