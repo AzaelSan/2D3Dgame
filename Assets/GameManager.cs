@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         print("test");
-        GameManager.Pause();
+        Pause();
         gameOverPanel.SetActive(true);
     }
 }

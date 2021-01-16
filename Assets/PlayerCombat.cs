@@ -74,7 +74,7 @@ public class PlayerCombat : MonoBehaviour
         if (collision.gameObject.CompareTag("DeathZone"))
         {
             gameover = true;
-            gameOver();
+            GameManager.instance.GameOver();
         }
     }
 
