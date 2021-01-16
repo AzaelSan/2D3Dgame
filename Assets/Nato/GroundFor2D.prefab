@@ -32,7 +32,11 @@ Transform:
   m_LocalScale: {x: 3, y: 3.4841, z: 3.66}
   m_Children:
   - {fileID: 4937602496905236534}
+<<<<<<< Updated upstream
   - {fileID: 3085931958438382030}
+=======
+  - {fileID: 3492808562833846095}
+>>>>>>> Stashed changes
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51,7 +55,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4937602495679881535}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -94,7 +98,7 @@ BoxCollider:
   m_GameObject: {fileID: 4937602495679881535}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -136,7 +140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4937602496905236490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.99, y: 0, z: 0}
+  m_LocalPosition: {x: 2.9900005, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4937602495679881531}
@@ -163,7 +167,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &7029771546281214719
+=======
+--- !u!1001 &8873604039898834046
+>>>>>>> Stashed changes
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -179,6 +187,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5430687207402982193, guid: a9c51b1aef49e894e8331d521620f5a0, type: 3}
+<<<<<<< Updated upstream
+=======
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430687207402982193, guid: a9c51b1aef49e894e8331d521620f5a0, type: 3}
+>>>>>>> Stashed changes
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -228,8 +243,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9c51b1aef49e894e8331d521620f5a0, type: 3}
+<<<<<<< Updated upstream
 --- !u!4 &3085931958438382030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5430687207402982193, guid: a9c51b1aef49e894e8331d521620f5a0, type: 3}
   m_PrefabInstance: {fileID: 7029771546281214719}
+=======
+--- !u!4 &3492808562833846095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5430687207402982193, guid: a9c51b1aef49e894e8331d521620f5a0, type: 3}
+  m_PrefabInstance: {fileID: 8873604039898834046}
+>>>>>>> Stashed changes
   m_PrefabAsset: {fileID: 0}
