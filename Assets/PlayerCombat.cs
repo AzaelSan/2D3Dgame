@@ -33,6 +33,7 @@ public class PlayerCombat : MonoBehaviour
     {
         gameover = false;
         GameManager.instance.gameOver = gameover;
+        GameManager.instance.win = false;
         playerAudio = GetComponent<AudioSource>();
         SettingsMenu.mainMenu = false;
         ui = GameObject.FindGameObjectWithTag("UI_gameplay").GetComponent<UI_gameplay>();

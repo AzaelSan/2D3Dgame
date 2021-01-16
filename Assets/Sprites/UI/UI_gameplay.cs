@@ -80,7 +80,11 @@ public class UI_gameplay : MonoBehaviour
             }
         }
         //Perder si se acaba el tiempo
-        PlayerCombat.gameover = true;
+        if (!GameManager.instance.win)
+        {
+            PlayerCombat.gameover = true;
+            GameManager.instance.gameOver = PlayerCombat.gameover;
+        }
     }
 
     public IEnumerator SetCheckpointText()

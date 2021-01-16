@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static bool isPaused = false;
     public bool gameOver;
+    public bool win;
 
     public Vector3 lastCheckpointPos;
     public Vector3 FirstCheckpointPos;
@@ -16,7 +17,12 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        win = false;
         FirstCheckpointPos = new Vector3(0.0f, 2.2f, -15.0f);
+        Camera_Transition.inverse = false;
+        Camera_Transition.ortho = false;
+
+
         lastCheckpointPos = FirstCheckpointPos;
         health = 3;
         currentLevel = 1;
