@@ -17,7 +17,6 @@ public class ShowItem2D : MonoBehaviour
         if (Camera_Transition.ortho)
         {
             render.enabled = true;
-            Debug.Log(gameObject);
         }
         else
         {

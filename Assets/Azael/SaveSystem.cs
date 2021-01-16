@@ -9,7 +9,7 @@ public static class SaveSystem
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/checkpoint.bin";
         FileStream stream = new FileStream(path, FileMode.Create);
-        Debug.Log(path);
+        //Debug.Log(path);
         Data data = new Data(manager);
 
         formatter.Serialize(stream, data);

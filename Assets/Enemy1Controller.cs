@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy1Controller : MonoBehaviour
 {
     Transform playerLocation;
-    public Vector3[] locations;
+    public Transform[] locations;
     public float speed;
     public int chosen;
     public int plusminus;
@@ -106,12 +106,12 @@ public class Enemy1Controller : MonoBehaviour
 
     void MoveLocations()
     {
-        Vector3 locationsCorrected = new Vector3(locations[chosen].x, this.transform.position.y, locations[chosen].z);
-        locations[chosen] = locationsCorrected;
+        Vector3 locationsCorrected = new Vector3(locations[chosen].position.x, this.transform.position.y, locations[chosen].position.z);
+        locations[chosen].position = locationsCorrected;
 
-        transform.position = Vector3.MoveTowards(transform.position, locations[chosen], speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, locations[chosen].position, speed * Time.deltaTime);
         Vector3 position = gameObject.transform.position;
-        if (position == locations[chosen])
+        if (position == locations[chosen].position)
         {
             chosen = chosen + plusminus;
         }
@@ -123,7 +123,7 @@ public class Enemy1Controller : MonoBehaviour
         {
             plusminus = 1;
         }
-        if (transform.position.x < locations[chosen].x)
+        if (transform.position.x < locations[chosen].position.x)
         {
             //SIRVE PARA DAR PERSPECTIVA 2D A UN OBJETO 3D
             //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, -0.25f);
