@@ -31,6 +31,8 @@ public class PlayerCombat : MonoBehaviour
 
     private void Start()
     {
+        gameover = false;
+        GameManager.instance.gameOver = gameover;
         playerAudio = GetComponent<AudioSource>();
         SettingsMenu.mainMenu = false;
         ui = GameObject.FindGameObjectWithTag("UI_gameplay").GetComponent<UI_gameplay>();
@@ -105,6 +107,7 @@ public class PlayerCombat : MonoBehaviour
         if (Health <= 0)
         {
             gameover = true;
+            GameManager.instance.gameOver = gameover;
             GameManager.instance.GameOver();
         }
         rigi.AddForce(_direction * 10.0f, ForceMode.Impulse); //Impulsar al jugador hacia atras cuando recibe daño

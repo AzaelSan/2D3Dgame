@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public static bool isPaused = false;
-    public GameObject gameOverPanel;
     public bool gameOver;
 
 

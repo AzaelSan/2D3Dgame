@@ -5,14 +5,22 @@ using UnityEngine.UI;
 
 public class DeathMenu : MonoBehaviour
 {
+    public GameObject deathUI;
     public Button retryBtn;
     public Button mainmenuBtn;
 
-    void Update()
+    private void Awake()
+    {
+        print("queanos?");
+        //loader = GameObject.FindGameObjectWithTag("LevelLoader").GetComponent<LevelLoader>();
+        deathUI.SetActive(false);
+    }
+
+    public void Update()
     {
         if (GameManager.instance.gameOver)
         {
-            GameManager.instance.gameOverPanel.SetActive(true);
+            deathUI.SetActive(true);
         }
     }
 
