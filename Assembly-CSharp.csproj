@@ -126,6 +126,8 @@
     <Compile Include="Assets\PlayerCombat.cs" />
     <Compile Include="Assets\PixelArtPlatformerWonderland\Scripts\SineWobble.cs" />
     <Compile Include="Assets\ShowItem2D2.cs" />
+    <Compile Include="Assets\WinScript.cs" />
+    <Compile Include="Assets\WinMenu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

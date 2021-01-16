@@ -45,7 +45,13 @@ public class ThereIsEnemies : MonoBehaviour
         {
             Instantiate(enemies, new Vector3(transform.position.x, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
             Instantiate(enemies, new Vector3(transform.position.x + 5, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
+            Instantiate(enemies, new Vector3(transform.position.x + 10, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
+            Instantiate(enemies, new Vector3(transform.position.x + 15, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
+            Instantiate(enemies, new Vector3(transform.position.x + 20, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
             Instantiate(enemies, new Vector3(transform.position.x - 5, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
+            Instantiate(enemies, new Vector3(transform.position.x - 10, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
+            Instantiate(enemies, new Vector3(transform.position.x - 15, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
+            Instantiate(enemies, new Vector3(transform.position.x - 20, transform.position.y + 3, transform.position.z - 43), Quaternion.identity);
         }
         enemiesSpawned = true;
     }
