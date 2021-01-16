@@ -60,6 +60,11 @@ public class Movement : MonoBehaviour
             }
 
         }
+        if (Camera_Transition.inverse)
+        {
+            movementInput.x = Input.GetAxisRaw("Horizontal") *-1;
+            movementInput.z = Input.GetAxisRaw("Vertical")*-1;
+        }
         
         if (movementInput != Vector3.zero)
         {
@@ -73,7 +78,7 @@ public class Movement : MonoBehaviour
         {
             if(movementSpeed < movementSpeedLimit)
             {
-                movementSpeed += 0.1f;
+                movementSpeed += 0.5f;
             }
         }
         if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetButtonUp("Button B"))
