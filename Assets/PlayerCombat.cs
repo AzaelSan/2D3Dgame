@@ -11,6 +11,10 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 1f;
     public LayerMask enemyLayers;
     public int attackDamage = 1;
+    private AudioSource playerAudio;
+    public AudioClip golpe;
+    public AudioClip dano;
+    public AudioClip aplastarSFX;
     //public EnemyController controller;
 
     [Header("Estadisticas")]
@@ -27,6 +31,7 @@ public class PlayerCombat : MonoBehaviour
 
     private void Start()
     {
+        playerAudio = GetComponent<AudioSource>();
         SettingsMenu.mainMenu = false;
         ui = GameObject.FindGameObjectWithTag("UI_gameplay").GetComponent<UI_gameplay>();
         //audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
@@ -38,6 +43,7 @@ public class PlayerCombat : MonoBehaviour
         if ((Input.GetButtonDown("Button X") || Input.GetKeyDown(KeyCode.L)) && canAttack)
         {
             Attack();
+            
             //audioManager.playSound(Sounds.attack);
         }
     }
@@ -49,12 +55,16 @@ public class PlayerCombat : MonoBehaviour
 
             if (Physics.OverlapSphere(aplastar + transform.position, 0.2f, enemyLayers).Length > 0)
             {
+                playerAudio.clip = aplastarSFX;
+                playerAudio.Play();
                 rigi.AddRelativeForce(Vector3.up * 15.0f, ForceMode.Impulse);
                 collision.gameObject.GetComponent<EnemyBase>().TakeDamage(1);
                 collision.gameObject.GetComponent<Enemy1Controller>().Stunned();
             }
             else
             {
+                playerAudio.clip = dano;
+                playerAudio.Play();
                 takeDamage(collision.GetContact(0).normal);
                 collision.gameObject.GetComponent<Enemy1Controller>().Stunned();
             }
@@ -63,6 +73,9 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
+        ///Play Sound
+        playerAudio.clip = golpe;
+        playerAudio.Play();
         ///Play animation
         //animator.SetTrigger("Attack");
         ///Detect enemies in range of attack
