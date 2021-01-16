@@ -16,6 +16,7 @@ public class PlayerCombat : MonoBehaviour
     public AudioClip dano;
     public AudioClip aplastarSFX;
     //public EnemyController controller;
+    GameManager gm;
 
     [Header("Estadisticas")]
     public int Health;
@@ -39,6 +40,8 @@ public class PlayerCombat : MonoBehaviour
         ui = GameObject.FindGameObjectWithTag("UI_gameplay").GetComponent<UI_gameplay>();
         //audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         rigi = GetComponent<Rigidbody>();
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        transform.position = gm.lastCheckpointPos;
     }
 
     void Update()

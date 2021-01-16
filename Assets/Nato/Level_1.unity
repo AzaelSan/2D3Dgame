@@ -10499,6 +10499,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1646193875150315576, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadCheckpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 1646193876404552079, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 126736287}
+    - target: {fileID: 1646193876404552079, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2001415186862768782, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 126736287}
+    - target: {fileID: 2001415186862768782, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 2001415188185239207, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
       propertyPath: m_Name
       value: PauseMenuCanvas
