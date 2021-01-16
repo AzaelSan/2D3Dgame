@@ -9632,7 +9632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1456688687}
-  secs: 0
+  secs: 1
 --- !u!4 &1777109828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5252936862529465324, guid: d257fac2f8992a341849252eb7c98df6, type: 3}

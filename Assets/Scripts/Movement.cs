@@ -22,6 +22,11 @@ public class Movement : MonoBehaviour
     private Transform groundChecker;
     private Vector3 movementInput;
 
+    public Animator animator;
+    public Animator animator2;
+    bool isMoving = false;
+    bool facingRight = true;
+
     public AudioClip saltoSFX;
 
     float movementSpeedSaved;
@@ -45,6 +50,14 @@ public class Movement : MonoBehaviour
         if(Camera_Transition.ortho)
         {
             movementInput.z = Input.GetAxisRaw("Horizontal");
+            if (movementInput.z > 0)
+            {
+                facingRight = true;
+            }
+            else
+            {
+                facingRight = false;
+            }
         }
         else
         {
@@ -52,18 +65,42 @@ public class Movement : MonoBehaviour
             {
                 movementInput.x = Input.GetAxisRaw("Horizontal")* - 1;
                 movementInput.z = Input.GetAxisRaw("Vertical")* - 1;
+                if (movementInput.x > 0)
+                {
+                    facingRight = false;
+                }
+                else
+                {
+                    facingRight = true;
+                }
             }
             else
             {
                 movementInput.x = Input.GetAxisRaw("Horizontal");
                 movementInput.z = Input.GetAxisRaw("Vertical");
+                if (movementInput.x > 0)
+                {
+                    facingRight = true;
+                }
+                else
+                {
+                    facingRight = false;
+                }
             }
 
         }
+
         
         if (movementInput != Vector3.zero)
         {
             transform.forward = movementInput;
+            animator.SetBool("IsWalking", true);
+            animator2.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+            animator2.SetBool("IsWalking", false);
         }
         if (Input.GetButtonDown("Button A") && isGrounded)
         {
@@ -80,6 +117,12 @@ public class Movement : MonoBehaviour
         {
             movementSpeed = movementSpeedSaved;
         }
+        if (true)
+        {
+            animator.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            animator2.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+        
     }
 
     void FixedUpdate()
