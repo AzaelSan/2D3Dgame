@@ -10608,6 +10608,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953304757531926766, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
+      propertyPath: UI
+      value: 
+      objectReference: {fileID: 1866241295}
+    - target: {fileID: 4953304757531926766, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
       propertyPath: winUI
       value: 
       objectReference: {fileID: 1866241294}
@@ -10639,6 +10643,11 @@ MonoBehaviour:
 --- !u!1 &1866241294 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9160447685143748536, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
+  m_PrefabInstance: {fileID: 1866241292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1866241295 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2001415188185239204, guid: c5d0c87a40be1d74191087c2f7f1402d, type: 3}
   m_PrefabInstance: {fileID: 1866241292}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1876942355 stripped

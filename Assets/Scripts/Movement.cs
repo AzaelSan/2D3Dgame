@@ -42,43 +42,16 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if(!PlayerCombat.gameover)
-        //Checks if the character is grounded.
-        isGrounded = Physics.CheckSphere(groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
-        movementInput = Vector3.zero;
-        //Cambiar controles segun la perspectiva de la camara
-        if(Camera_Transition.ortho)
+        if (!PlayerCombat.gameover && !GameManager.instance.win)
         {
-            movementInput.z = Input.GetAxisRaw("Horizontal");
-            if (movementInput.z > 0)
+            //Checks if the character is grounded.
+            isGrounded = Physics.CheckSphere(groundChecker.position, GroundDistance, Ground, QueryTriggerInteraction.Ignore);
+            movementInput = Vector3.zero;
+            //Cambiar controles segun la perspectiva de la camara
+            if (Camera_Transition.ortho)
             {
-                facingRight = true;
-            }
-            else
-            {
-                facingRight = false;
-            }
-        }
-        else
-        {
-            if (Camera_Transition.inverse)
-            {
-                movementInput.x = Input.GetAxisRaw("Horizontal")* - 1;
-                movementInput.z = Input.GetAxisRaw("Vertical")* - 1;
-                if (movementInput.x > 0)
-                {
-                    facingRight = false;
-                }
-                else
-                {
-                    facingRight = true;
-                }
-            }
-            else
-            {
-                movementInput.x = Input.GetAxisRaw("Horizontal");
-                movementInput.z = Input.GetAxisRaw("Vertical");
-                if (movementInput.x > 0)
+                movementInput.z = Input.GetAxisRaw("Horizontal");
+                if (movementInput.z > 0)
                 {
                     facingRight = true;
                 }
@@ -87,40 +60,69 @@ public class Movement : MonoBehaviour
                     facingRight = false;
                 }
             }
-
-        }
-
-        
-        if (movementInput != Vector3.zero)
-        {
-            transform.forward = movementInput;
-            animator.SetBool("IsWalking", true);
-            animator2.SetBool("IsWalking", true);
-        }
-        else
-        {
-            animator.SetBool("IsWalking", false);
-            animator2.SetBool("IsWalking", false);
-        }
-        if (Input.GetButtonDown("Button A") && isGrounded)
-        {
-            Jump();
-        }
-        if((Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Button B")) && (movementInput.x != 0.0f || movementInput.z != 0.0f))
-        {
-            if(movementSpeed < movementSpeedLimit)
+            else
             {
-                movementSpeed += 0.1f;
+                if (Camera_Transition.inverse)
+                {
+                    movementInput.x = Input.GetAxisRaw("Horizontal") * -1;
+                    movementInput.z = Input.GetAxisRaw("Vertical") * -1;
+                    if (movementInput.x > 0)
+                    {
+                        facingRight = false;
+                    }
+                    else
+                    {
+                        facingRight = true;
+                    }
+                }
+                else
+                {
+                    movementInput.x = Input.GetAxisRaw("Horizontal");
+                    movementInput.z = Input.GetAxisRaw("Vertical");
+                    if (movementInput.x > 0)
+                    {
+                        facingRight = true;
+                    }
+                    else
+                    {
+                        facingRight = false;
+                    }
+                }
+
             }
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetButtonUp("Button B"))
-        {
-            movementSpeed = movementSpeedSaved;
-        }
-        if (true)
-        {
-            animator.gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            animator2.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+
+
+            if (movementInput != Vector3.zero)
+            {
+                transform.forward = movementInput;
+                animator.SetBool("IsWalking", true);
+                animator2.SetBool("IsWalking", true);
+            }
+            else
+            {
+                animator.SetBool("IsWalking", false);
+                animator2.SetBool("IsWalking", false);
+            }
+            if (Input.GetButtonDown("Button A") && isGrounded)
+            {
+                Jump();
+            }
+            if ((Input.GetKey(KeyCode.LeftShift) || Input.GetButton("Button B")) && (movementInput.x != 0.0f || movementInput.z != 0.0f))
+            {
+                if (movementSpeed < movementSpeedLimit)
+                {
+                    movementSpeed += 0.1f;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetButtonUp("Button B"))
+            {
+                movementSpeed = movementSpeedSaved;
+            }
+            if (true)
+            {
+                animator.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                animator2.gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
         
     }
