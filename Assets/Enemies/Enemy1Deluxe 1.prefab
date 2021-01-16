@@ -238,7 +238,7 @@ MonoBehaviour:
   - {fileID: 400558347217673570}
   - {fileID: 400558346562459631}
   - {fileID: 400558345943183633}
-  speed: 0
+  speed: 1
   chosen: 0
   plusminus: 0
   playerDetected: 0

@@ -13,6 +13,8 @@ public class EnemyBase : MonoBehaviour
 
     public void Start()
     {
+
+        controller = GameObject.FindWithTag("Camara").GetComponent<EnemyController>();
         maxHealth = controller.SetHealth(enemyType);
         currentHealth = maxHealth;
         controller.SetDamage(enemyType, damageOfEnemy);
