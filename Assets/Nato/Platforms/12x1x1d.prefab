@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2763073781690295237}
   - component: {fileID: 2763073781690295238}
   - component: {fileID: 2763073781690295239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 10x4x63
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 2763073781812896467}
   - component: {fileID: 2763073781812896468}
   - component: {fileID: 2763073781812896469}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 10x4x63 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 2763073782018185064}
   - component: {fileID: 2763073782018185065}
   - component: {fileID: 2763073782018185066}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 1x5x1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 2763073782249258847}
   - component: {fileID: 2763073782249258832}
   - component: {fileID: 2763073782249258833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 12x1x1d
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 2763073782324190562}
   - component: {fileID: 2763073782324190563}
   - component: {fileID: 2763073782324190564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 10x4x63 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
