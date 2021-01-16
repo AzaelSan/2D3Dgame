@@ -14,6 +14,7 @@ TagManager:
   - MovingPlat
   - Checkpoint
   - UI_gameplay
+  - Death zone
   layers:
   - Default
   - TransparentFX

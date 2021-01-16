@@ -111,9 +111,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locations:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  speed: 0
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 1
   chosen: 0
   plusminus: 0
   playerDetected: 0

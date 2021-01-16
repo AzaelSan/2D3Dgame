@@ -71,9 +71,10 @@ public class PlayerCombat : MonoBehaviour
                 collision.gameObject.GetComponent<Enemy1Controller>().Stunned();
             }
         }
-        if (collision.gameObject.CompareTag("DeathZone"))
+        if (collision.gameObject.CompareTag("Death zone"))
         {
             gameover = true;
+            GameManager.instance.gameOver = gameover;
             GameManager.instance.GameOver();
         }
     }
