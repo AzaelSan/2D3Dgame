@@ -81,7 +81,8 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
-        Debug.Log("Mamaste");
+        print("test");
+        GameManager.Pause();
         gameOverPanel.SetActive(true);
     }
 }

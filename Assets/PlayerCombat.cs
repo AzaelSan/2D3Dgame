@@ -47,10 +47,6 @@ public class PlayerCombat : MonoBehaviour
                 Attack();
                 //audioManager.playSound(Sounds.attack);
             }
-            if(rigi.position.y < -40)
-            {
-                GameManager.instance.GameOver();
-            }
         }
     }
 
@@ -74,6 +70,11 @@ public class PlayerCombat : MonoBehaviour
                 takeDamage(collision.GetContact(0).normal);
                 collision.gameObject.GetComponent<Enemy1Controller>().Stunned();
             }
+        }
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+            gameover = true;
+            gameOver();
         }
     }
 
@@ -135,6 +136,5 @@ public class PlayerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
         Gizmos.DrawWireSphere(aplastar + transform.position, 0.2f);
     }
-
 
 }
