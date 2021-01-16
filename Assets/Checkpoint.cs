@@ -6,6 +6,7 @@ public class Checkpoint : MonoBehaviour
 {
     private GameManager gm;
     public int level;
+    public UI_gameplay gempley;
 
     private void Start()
     {
@@ -19,6 +20,7 @@ public class Checkpoint : MonoBehaviour
             gm.health = other.gameObject.GetComponent<PlayerCombat>().Health;
             gm.currentLevel = level;
             SaveSystem.SaveData(gm);
+            StartCoroutine(gempley.SetCheckpointText());
         }
     }
 }

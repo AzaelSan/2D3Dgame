@@ -83,7 +83,7 @@ public class UI_gameplay : MonoBehaviour
         PlayerCombat.gameover = true;
     }
 
-    IEnumerator SetCheckpointText()
+    public IEnumerator SetCheckpointText()
     {
         saving.SetActive(true);
         yield return new WaitForSecondsRealtime(0.5f);

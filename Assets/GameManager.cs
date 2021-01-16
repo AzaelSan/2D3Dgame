@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public static bool isPaused = false;
     public bool gameOver;
 
-
     public Vector3 lastCheckpointPos;
     public Vector3 FirstCheckpointPos;
     public int health;
@@ -49,7 +48,6 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-        
     }
 
     public static void Resume()
