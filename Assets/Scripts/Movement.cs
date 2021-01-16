@@ -17,14 +17,18 @@ public class Movement : MonoBehaviour
     public LayerMask Ground;
 
     private Rigidbody rb;
+    private AudioSource playerAudio;
     private bool isGrounded = true;
     private Transform groundChecker;
     private Vector3 movementInput;
+
+    public AudioClip saltoSFX;
 
     float movementSpeedSaved;
 
     private void Start()
     {
+        playerAudio = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         //The first child should always be an empty object. We'll use this to check if the player is touching the ground.
         groundChecker = transform.GetChild(0);
@@ -44,8 +48,17 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            movementInput.x = Input.GetAxisRaw("Horizontal");
-            movementInput.z = Input.GetAxisRaw("Vertical");
+            if (Camera_Transition.inverse)
+            {
+                movementInput.x = Input.GetAxisRaw("Horizontal")* - 1;
+                movementInput.z = Input.GetAxisRaw("Vertical")* - 1;
+            }
+            else
+            {
+                movementInput.x = Input.GetAxisRaw("Horizontal");
+                movementInput.z = Input.GetAxisRaw("Vertical");
+            }
+
         }
         
         if (movementInput != Vector3.zero)
@@ -77,6 +90,8 @@ public class Movement : MonoBehaviour
 
     void Jump()
     {
+        playerAudio.clip = saltoSFX;
+        playerAudio.Play();
         rb.velocity = Vector3.up * jumpVelocity;
     }
 }
