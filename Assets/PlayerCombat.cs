@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
+    public GameObject DeathMenuUI;
+
     Vector3 aplastar = new Vector3(0, -1, 0);
     private Rigidbody rigi;
     public Animator animator;
@@ -69,6 +71,11 @@ public class PlayerCombat : MonoBehaviour
                 collision.gameObject.GetComponent<Enemy1Controller>().Stunned();
             }
         }
+        if (collision.gameObject.CompareTag("DeathZone"))
+        {
+            gameover = true;
+            gameOver();
+        }
     }
 
     void Attack()
@@ -97,6 +104,7 @@ public class PlayerCombat : MonoBehaviour
         if (Health <= 0)
         {
             gameover = true;
+            gameOver();
         }
         rigi.AddForce(_direction * 10.0f, ForceMode.Impulse); //Impulsar al jugador hacia atras cuando recibe daño
         rigi.AddRelativeForce(Vector3.up * 10.0f, ForceMode.Impulse);
@@ -129,5 +137,11 @@ public class PlayerCombat : MonoBehaviour
         Gizmos.DrawWireSphere(aplastar + transform.position, 0.2f);
     }
 
+    private void gameOver()
+    {
+        print("test");
+        DeathMenuUI.SetActive(true);
+        GameManager.Pause();
+    }
 
 }
